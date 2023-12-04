@@ -1,0 +1,62 @@
+CREATE TABLE ways AS
+SELECT value as n, 1 as m, 1 as c
+FROM GENERATE_SERIES(0, 200);
+
+INSERT INTO ways
+SELECT h.value, 2, SUM(c)
+FROM GENERATE_SERIES(0, 200) h
+CROSS JOIN GENERATE_SERIES(0, 200/2) k
+JOIN ways l ON l.n = h.value - 2*k.value
+GROUP BY h.value;
+DELETE FROM ways WHERE m != 2;
+
+INSERT INTO ways
+SELECT h.value, 5, SUM(c)
+FROM GENERATE_SERIES(0, 200) h
+CROSS JOIN GENERATE_SERIES(0, 200/5) k
+JOIN ways l ON l.n = h.value - 5*k.value
+GROUP BY h.value;
+DELETE FROM ways WHERE m != 5;
+
+INSERT INTO ways
+SELECT h.value, 10, SUM(c)
+FROM GENERATE_SERIES(0, 200) h
+CROSS JOIN GENERATE_SERIES(0, 200/10) k
+JOIN ways l ON l.n = h.value - 10*k.value
+GROUP BY h.value;
+DELETE FROM ways WHERE m != 10;
+
+INSERT INTO ways
+SELECT h.value, 20, SUM(c)
+FROM GENERATE_SERIES(0, 200) h
+CROSS JOIN GENERATE_SERIES(0, 200/20) k
+JOIN ways l ON l.n = h.value - 20*k.value
+GROUP BY h.value;
+DELETE FROM ways WHERE m != 20;
+
+INSERT INTO ways
+SELECT h.value, 50, SUM(c)
+FROM GENERATE_SERIES(0, 200) h
+CROSS JOIN GENERATE_SERIES(0, 200/50) k
+JOIN ways l ON l.n = h.value - 50*k.value
+GROUP BY h.value;
+DELETE FROM ways WHERE m != 50;
+
+INSERT INTO ways
+SELECT h.value, 100, SUM(c)
+FROM GENERATE_SERIES(0, 200) h
+CROSS JOIN GENERATE_SERIES(0, 200/100) k
+JOIN ways l ON l.n = h.value - 100*k.value
+GROUP BY h.value;
+DELETE FROM ways WHERE m != 100;
+
+INSERT INTO ways
+SELECT h.value, 200, SUM(c)
+FROM GENERATE_SERIES(0, 200) h
+CROSS JOIN GENERATE_SERIES(0, 200/200) k
+JOIN ways l ON l.n = h.value - 200*k.value
+GROUP BY h.value;
+DELETE FROM ways WHERE m != 200;
+
+SELECT c FROM ways WHERE n = 200;
+

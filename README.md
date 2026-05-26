@@ -64,7 +64,21 @@ List of timings:
 55. 0.295 s
 56. 0.112 s
 57. 0.009 s
-58. 2.544 s
+58. 2.544 s (first solve after bonus problems were added)
 59. 0.005 s
 60. 2 m 9.120 s
-
+61. 0.033 s
+62. 3.778 s
+63. 0.005 s
+64. 0.357 s
+65. 0.005 s
+66. 0.024 s
+67. 0.040 s
+68. 0.007 s
+69. 0.004 s
+70. 8.612 s (unlocked bonus problem -3)
+71. 0.054 s
+72. 1.725 s
+73. 0.025 s
+74. 43.482 s (unlocked bonus problem -6)
+75. 0.779 s

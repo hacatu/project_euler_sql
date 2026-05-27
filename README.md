@@ -82,3 +82,8 @@ List of timings:
 73. 0.025 s
 74. 43.482 s (unlocked bonus problem -6)
 75. 0.779 s
+76. 0.004 s
+77. 0.006 s
+78. 14 m 23.448 s
+79. 0.005 s
+80. 0.032 s
